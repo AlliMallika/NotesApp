@@ -1,6 +1,7 @@
 import React from 'react'
-import Navbar from '../components/Navbar/Navbar'
+import Navbar from '../Navbar/Navbar'
 import { Link } from 'react-router-dom'
+import PasswordInput from '../Input/PasswordInput'
 
 //Login
 
@@ -19,6 +20,9 @@ const Login = () => {
               placeholder='Email'
               className='input-box'
             />
+
+            <PasswordInput/>
+
             <button 
               type="submit" 
               className="bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
