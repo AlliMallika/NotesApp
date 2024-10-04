@@ -42,11 +42,20 @@ const Home = () => {
           overlay: {
             backgroundColor: "rgba(0, 0, 0, 0.2)",
           },
+          content: {
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'center', 
+            padding: '20px', 
+            borderRadius: '4px', 
+            maxHeight: '75%', 
+            overflow: 'auto', 
+          },
          }} 
-          contentLabel="w-[40%] max-h-3/4 bg-white rounded-md mx-auto mt-14 p-5 overflow-scroll"
-          className=""
+          contentLabel=" max-h-3/4 bg-white rounded-md mx-auto mt-14 p-5 overflow-scroll"
+          className="w-[50vw] mx-auto mt-20"
          >
-      <AddEditNotes/>
+          <AddEditNotes/>
       </Modal>
     </>
   )
