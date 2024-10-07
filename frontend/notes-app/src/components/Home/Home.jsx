@@ -7,7 +7,7 @@ import Modal from 'react-modal'
 
 const Home = () => {
 
-  const [openAddEditModel, setOpenAddEditModal] = useState({
+  const [openAddEditModal, setOpenAddEditModal] = useState({
      isShown: false,
      type:"add",
      data: null,
@@ -36,7 +36,7 @@ const Home = () => {
       </button>
 
       <Modal 
-         isOpen={openAddEditModel.isShown}
+         isOpen={openAddEditModal.isShown}
          onRequestClose={() => {}}
          style={{
           overlay: {
@@ -49,13 +49,19 @@ const Home = () => {
             padding: '20px', 
             borderRadius: '4px', 
             maxHeight: '75%', 
-            overflow: 'auto', 
+            // overflow: 'auto', 
           },
          }} 
-          contentLabel=" max-h-3/4 bg-white rounded-md mx-auto mt-14 p-5 overflow-scroll"
+          contentLabel=" max-h-3/4 bg-white rounded-md mx-auto mt-14 p-5"
           className="w-[50vw] mx-auto mt-20"
          >
-          <AddEditNotes/>
+          <AddEditNotes
+            type={openAddEditModal.type}
+            noteData={openAddEditModal.data}
+            onClose={() => {
+                setOpenAddEditModal({ isShown: false, type: "add", data: null });
+            }}
+          />
       </Modal>
     </>
   )
