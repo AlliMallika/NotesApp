@@ -27,7 +27,7 @@ app.get("/", (req, res) => {
     console.log("index.js");
 });
 
-// Create Account
+// Create Account API
 app.post('/create-account', async(req, res) => {
   const { fullName, email, password } = req.body;
 
